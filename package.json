@@ -1,0 +1,25 @@
+{
+  "name": "restify",
+  "version": "1.0.0",
+  "description": "usando restify para webservice",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "restify",
+    "nodejs"
+  ],
+  "author": "mauroslucios@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.5.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^3.0.2",
+    "restify": "^11.1.0"
+  }
+}
