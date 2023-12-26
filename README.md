@@ -3,3 +3,5 @@
 - nodemon
 - eslint
 - restify
+- cors-middleware
+- bodyParser
