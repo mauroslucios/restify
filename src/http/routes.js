@@ -1,15 +1,16 @@
 const db = require('../services/mysql')
+const restifyAsyncWrap = require('@gilbertco/restify-async-wrap')
 
 const routes = (server) => {
-  server.get('/categoria', (req, res, next) => {
-    db.categories().all().then(categories => {
-      res.send(categories)
+  server.get('/categoria', restifyAsyncWrap(async (req, res, next) => {
+    try {
+      res.send(await db.categories().all())
       next()
-    }).catch(error => {
+    } catch (error) {
       res.send(error)
       next()
-    })
-  })
+    }
+  }))
 
   server.post('/categoria', (req, res, next) => {
     console.log(req)

@@ -23,5 +23,8 @@
     "nodemon": "^3.0.2",
     "restify": "^11.1.0",
     "restify-cors-middleware": "^1.1.1"
+  },
+  "dependencies": {
+    "@gilbertco/restify-async-wrap": "^0.1.2"
   }
 }
