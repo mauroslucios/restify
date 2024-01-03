@@ -5,3 +5,5 @@
 - restify
 - cors-middleware
 - bodyParser
+- restifyAsyncWrap
+- MySQL
