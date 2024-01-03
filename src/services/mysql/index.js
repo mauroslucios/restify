@@ -6,10 +6,15 @@ const connection = mysql.createConnection({
   user: 'root',
   password: 'P@SSw0r4',
   database: 'webservice'
-});
+})
+
+const errorHandler = (error, msg, rejectFunction) => {
+  console.error(error)
+  rejectFunction({ error: msg })
+}
 
 // simple query
-const categoryModule = require('./categories')({ connection })
+const categoryModule = require('./categories')({ connection, errorHandler })
 
 module.exports = {
   categories: () => categoryModule
