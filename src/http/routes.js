@@ -12,12 +12,16 @@ const routes = (server) => {
     }
   }))
 
-  server.post('/categoria', (req, res, next) => {
-    console.log(req)
+  server.post('/categoria', restifyAsyncWrap(async (req, res, next) => {
     const { name } = req.params
-    res.send(name)
-    next()
-  })
+    try {
+      res.send(await db.categories().save(name))
+      next()
+    } catch (error) {
+      res.send(error)
+      next()
+    }
+  }))
 }
 
 module.exports = routes
