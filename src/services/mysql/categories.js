@@ -24,8 +24,30 @@ const categories = deps => {
         })
       })
     },
-    update: (id, name) => {},
-    del: (id) => {}
+    update: (id, name) => {
+      return new Promise((resolve, reject) => {
+        const { connection, errorHandler } = deps
+        connection.query('UPDATE categories SET name = ? WHERE id = ? ', [name, id], (error, results) => {
+          if (error) {
+            errorHandler(error, `Falha ao atualizar a categoria ${name}`, reject)
+            return false
+          }
+          resolve({ category: { name, id: results.insertId } })
+        })
+      })
+    },
+    del: (id) => {
+      return new Promise((resolve, reject) => {
+        const { connection, errorHandler } = deps
+        connection.query('DELETE FROM categories WHERE id = ? ', [id], (error, results) => {
+          if (error) {
+            errorHandler(error, `Falha ao deletar a categoria ${id}!`, reject)
+            return false
+          }
+          resolve({ message: 'Categoria deletada com sucesso!' })
+        })
+      })
+    }
   }
 }
 module.exports = categories

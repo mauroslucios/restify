@@ -22,6 +22,27 @@ const routes = (server) => {
       next()
     }
   }))
-}
 
+  server.put('/categoria', restifyAsyncWrap(async (req, res, next) => {
+    const { id, name } = req.params
+    try {
+      res.send(await db.categories().update(id, name))
+      next()
+    } catch (error) {
+      res.send(error)
+      next()
+    }
+  }))
+
+  server.del('/categoria', restifyAsyncWrap(async (req, res, next) => {
+    const { id } = req.params
+    try {
+      res.send(await db.categories().del(id))
+      next()
+    } catch (error) {
+      res.send(error)
+      next()
+    }
+  }))
+}
 module.exports = routes
