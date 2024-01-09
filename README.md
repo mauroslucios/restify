@@ -17,3 +17,4 @@
 ![put](https://github.com/mauroslucios/restify/assets/671694/f3b1f379-387f-49c2-9300-751a2ee3226c)
 
 ![delete](https://github.com/mauroslucios/restify/assets/671694/15b91cef-bb70-40cb-b361-1085c07b2d63)
+
