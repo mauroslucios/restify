@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --verbose"
   },
   "keywords": [
     "restify",
@@ -26,9 +26,7 @@
   },
   "dependencies": {
     "@gilbertco/restify-async-wrap": "^0.1.2",
-    "dotenv": "^16.3.1",
-    "restify-swagger-jsdoc": "^3.3.0",
-    "swagger-node-restify": "^0.1.2",
-    "swagger-restify": "^1.0.1"
+    "ava": "^6.0.1",
+    "dotenv": "^16.3.1"
   }
 }
