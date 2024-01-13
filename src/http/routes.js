@@ -1,6 +1,5 @@
 const db = require('../services/mysql')
 const restifyAsyncWrap = require('@gilbertco/restify-async-wrap')
-
 const routes = (server) => {
   server.get('/categoria', restifyAsyncWrap(async (req, res, next) => {
     try {

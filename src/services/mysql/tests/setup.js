@@ -1,5 +1,5 @@
-const mysql = require('mysql2');
 require('dotenv').config()
+const mysql = require('mysql2');
 
 // create the connection to database
 const connection = mysql.createConnection({
@@ -14,9 +14,4 @@ const errorHandler = (error, msg, rejectFunction) => {
   rejectFunction({ error: msg })
 }
 
-// simple query
-const categoryModule = require('./categories')({ connection, errorHandler })
-
-module.exports = {
-  categories: () => categoryModule
-}
+module.exports = { connection, errorHandler }
